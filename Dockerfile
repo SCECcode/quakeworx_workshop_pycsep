@@ -84,10 +84,8 @@ RUN pip install -e .
 
 WORKDIR /home/$APP_UNAME
 RUN mkdir -p /home/$APP_UNAME/quakeworx_workshop/tutorials/data \
-    && wget https://g-c662a6.a78b8.36fe.data.globus.org/pycsep/pycsep-training-2025/u3_fore_2010_04_08.bin \
-    && mv u3_fore_2010_04_08.bin /home/$APP_UNAME/quakeworx_workshop/tutorials \
-    && wget https://g-c662a6.a78b8.36fe.data.globus.org/pycsep/pycsep-training-2025/starting_tutorial_quakeworx_cyber.ipynb \
-    && mv starting_tutorial_quakeworx_cyber.ipynb /home/$APP_UNAME/quakeworx_workshop/tutorials
+    && git clone https://github.com/SCECcode/quakeworx_workshop_pycsep.git \
+    && cp  quakeworx_workshop_pycsep/notebooks/Tutorial_Quakeworx_cyber.ipynb /home/$APP_UNAME/quakeworx_workshop/tutorials
 
 # Define file input/output mounted disk
 #
